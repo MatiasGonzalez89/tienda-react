@@ -1,0 +1,28 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(239, 174, 9);
+    border-radius: 1cm;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+li{
+    list-style-type: none;
+    padding: 0 50px 0 50px;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+
+

@@ -1,14 +1,15 @@
 import './App.css';
-import NavBar from './components/NavBar';
-import 'materialize-css/dist/css/materialize.min.css';
+import NavBar from './components/Navbar/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <NavBar />
-      <ItemListContainer />
-    </div>
+      <ItemListContainer 
+        greeting='Bienvenido! La tienda se encuentra en construcción. Vuelva pronto.'
+      />
+    </>
   );
 }
 
