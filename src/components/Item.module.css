@@ -1,0 +1,20 @@
+.cardShop{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5px;
+    width: 15%;
+    height: 35vh;
+    border: 5px solid rgb(239, 174, 9);
+    text-align: center; 
+    background-color: rgb(239, 239, 235);
+}
+
+
+
+.cardImg{
+    width: 100%;
+    min-height: 20vh;
+    background-color: grey;
+}
+

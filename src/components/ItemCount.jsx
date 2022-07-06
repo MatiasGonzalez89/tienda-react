@@ -6,12 +6,12 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     const sumar = () => {
         contador < stock && setContador(contador + 1)
-        contador >= stock && setContador(contador = stock)
+        contador >= stock && setContador(stock)
     }
 
     const restar = () => {
         contador > initial && setContador(contador - 1)
-        contador == initial && setContador(contador = initial)
+        contador == initial && setContador(initial)
     }
 
     return (

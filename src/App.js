@@ -7,7 +7,7 @@ function App() {
     <>
       <NavBar />
       <ItemListContainer 
-        greeting='Bienvenido! La tienda se encuentra en construcción. Vuelva pronto.'
+        greeting='Bienvenido a mi tienda online.'
       />
     </>
   );
