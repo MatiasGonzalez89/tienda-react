@@ -20,12 +20,9 @@ const ItemListContainer = ({greeting}) => {
         promesa.then((response) => {
             setLoading(false)
             setProductos(response)
-        })/* .catch ((reject) => {
+        }) .catch ((reject) => {
             setProductos(reject)
-        }) .finally((data) => {
-            setLoading(false)
-            setProductos(data)
-        })*/
+        })
     },[])
 
     return (

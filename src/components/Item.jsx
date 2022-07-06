@@ -1,13 +1,15 @@
 import React from 'react'
 import styles from './Item.module.css'
 
+
 export const Item = ({producto}) => {
     return (
-        <div className={styles.cardShop}>{producto.id}
+        <div className={styles.cardShop} key={producto.id}>
                 <h1>{producto.nombre}</h1>
-                <div className={styles.cardImg}>Imagen</div>
+                <img className={styles.cardImg}></img>
                 <p>{producto.descripcion}</p>
-                <h2>{producto.precio}</h2>
+                <button>Ver detalle</button>
+                <h2>${producto.precio}</h2>
                 
         </div>
     )
