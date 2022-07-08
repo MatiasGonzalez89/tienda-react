@@ -11,7 +11,7 @@ const getItem =new Promise ((res, rej) => {
 
 }) 
 
-const ItemDetailContainer = ({producto}) => {
+const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState([])
     const [loading, setLoading] = useState(false)
@@ -28,7 +28,7 @@ const ItemDetailContainer = ({producto}) => {
 
     return (
             <>
-                {loading ? <h1>Cargando...</h1> : <ItemDetail producto={producto[0]} />}
+                {loading ? <h1>Cargando...</h1> : <ItemDetail producto={producto} />}
             </>
         )
     }

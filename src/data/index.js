@@ -1,47 +1,47 @@
 const productos = [
     {
         id: 1,
-        nombre: "Remera Uno",
+        title: "Remera Uno",
         color: "Negro",
-        imgUrl: "../assets/remera-negra.jpeg",
-        descripcion:"Remera de algodon color negro",
-        precio: "1200",
+        imgUrl: "https://netivooregon.s3.amazonaws.com/attach/modelo/20220615/1865/37554714.jpeg?39108",
+        description:"Remera de algodon color negro",
+        price: "1200",
         stock: "5"
     },
     {
         id: 2,
-        nombre: "Remera Dos",
+        title: "Remera Dos",
         color: "Blanco",
-        imgUrl: "../assets/remera-negra.jpeg",
-        descripcion:"Remera de algodon color blanco",
-        precio: "1200",
+        imgUrl: "https://netivooregon.s3.amazonaws.com/attach/modelo/20220311/1318/34544323.jpg?5425",
+        description:"Remera de algodon color blanco",
+        price: "1200",
         stock: "5"
     },
     {
         id: 3,
-        nombre: "Remera Tres",
+        title: "Remera Tres",
         color: "Rojo",
-        imgUrl: "../assets/remera-negra.jpeg",
-        descripcion:"Remera de algodon color rojo",
-        precio: "1500",
+        imgUrl: "https://netivooregon.s3.amazonaws.com/attach/modelo/20220311/1318/34544323.jpg?5425",
+        description:"Remera de algodon color rojo",
+        price: "1500",
         stock: "3"
     },
     {
         id: 4,
-        nombre: "Remera Cuatro",
+        title: "Remera Cuatro",
         color: "Azul",
-        imgUrl: "../assets/remera-negra.jpeg",
-        descripcion:"Remera de algodon color azul",
-        precio: "1500",
+        imgUrl: "https://netivooregon.s3.amazonaws.com/attach/modelo/20220311/1318/34544323.jpg?5425",
+        description:"Remera de algodon color azul",
+        price: "1500",
         stock: "3"
     },
     {
         id: 5,
-        nombre: "Remera Cinco",
+        title: "Remera Cinco",
         color: "Amarillo",
-        imgUrl: "../assets/remera-negra.jpeg",
-        descripcion:"Remera de algodon color amarillo",
-        precio: "1500",
+        imgUrl: "https://netivooregon.s3.amazonaws.com/attach/modelo/20220311/1318/34544323.jpg?5425",
+        description:"Remera de algodon color amarillo",
+        price: "1500",
         stock: "4"
     },
 ];

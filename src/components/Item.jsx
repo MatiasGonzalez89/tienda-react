@@ -2,14 +2,14 @@ import React from 'react'
 import styles from './Item.module.css'
 
 
-export const Item = ({producto}) => {
+export const Item = ({producto: {id, title, description, price, imgUrl}}) => {
     return (
-        <div className={styles.cardShop} key={producto.id}>
-                <h1>{producto.nombre}</h1>
-                <img className={styles.cardImg}></img>
-                <p>{producto.descripcion}</p>
+        <div className={styles.cardShop} key={id}>
+                <h1>{title}</h1>
+                <img src={imgUrl} />
+                <p>{description}</p>
                 <button>Ver detalle</button>
-                <h2>${producto.precio}</h2>
+                <h2>${price}</h2>
                 
         </div>
     )

@@ -2,9 +2,3 @@
     text-align: center;
 }
 
-.main{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: black;
-}
