@@ -1,12 +1,12 @@
 import React, { useState, useEffect} from 'react'
-import productos from '../data';
+import productos from '../data/index';
 import ItemDetail from './ItemDetail';
 
 
 
 const getItem =new Promise ((res, rej) => {
     setTimeout(() => {
-        res(productos)
+        res(productos[1])
     }, 2000)
 
 }) 

@@ -11,11 +11,17 @@
 
 .cardImg{
     width: 100%;
-    min-height: 20vh;
+    height: 490px;
     background-color: grey;
+}
+
+.cardShop p{
+    font-size: large;
 }
 
 button{
     background-color: rgb(239, 174, 9);
     font-weight:600;
 }
+
+

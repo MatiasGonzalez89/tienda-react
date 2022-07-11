@@ -1,4 +1,9 @@
+.itemListContainer{
+    background-color: black;
+}
+
 .greeting{
     text-align: center;
+    color: aliceblue;
 }
 

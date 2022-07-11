@@ -3,4 +3,6 @@
     height: fit-content;
     justify-content: space-around;
     flex-wrap: wrap;
+    border-bottom: 1px solid rgb(239, 174, 9);
+    padding-bottom: 100px;
 }

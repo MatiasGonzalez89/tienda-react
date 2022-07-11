@@ -1,19 +1,23 @@
 import './App.css';
 import NavBar from './components/Navbar/NavBar';
 import ItemListContainer from './components/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer';
 
 
 function App() {
   return (
-    <>
+    <div style={styles.body}>
       <NavBar />
       <ItemListContainer 
         greeting='Bienvenido a mi tienda online.'
       />
-      <ItemDetailContainer />
-    </>
+    </div>
   );
 }
 
 export default App;
+
+const styles = {
+  body: {
+    backgroundColor: "black"
+  }
+}

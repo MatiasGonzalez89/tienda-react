@@ -1,0 +1,19 @@
+.itemDetailContainer{
+    display: flex;
+    justify-content: center;
+    padding: 100px 100px 50px 100px;
+}
+
+.itemDetailImg{
+    width: 400px;
+}
+
+.detailContainer{
+    color: beige;
+    margin: 100px;
+}
+
+.detailContainer h1, .detailContainer h2, .detailContainer button {
+    font-size: 50px;
+}
+
