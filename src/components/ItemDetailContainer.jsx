@@ -1,30 +1,33 @@
 import React, { useState, useEffect} from 'react'
 import productos from '../data/index';
 import ItemDetail from './ItemDetail';
-
+import { useParams } from 'react-router-dom';
 
 
 const getItem =new Promise ((res, rej) => {
     setTimeout(() => {
-        res(productos[1])
+        res(productos[0])
     }, 2000)
-
 }) 
 
 const ItemDetailContainer = () => {
 
+    const {itemId} = useParams()
     const [producto, setProducto] = useState([])
     const [loading, setLoading] = useState(false)
     
     useEffect(() => {
+
+        const item = productos.find(producto => producto.id === {itemId})
+
         setLoading(true)
-        getItem.then((response) => {
+        getItem.then((item) => {
             setLoading(false)
-            setProducto(response)
+            setProducto(item)
         }) .catch ((reject) => {
             setProducto(reject)
         })
-    },[])
+    },[itemId])
 
     return (
             <>

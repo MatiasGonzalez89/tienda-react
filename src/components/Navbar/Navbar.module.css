@@ -1,4 +1,4 @@
-nav{
+header{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,19 +14,15 @@ nav{
 
 .menu{
     display: flex;
-    justify-content: space-between;
-}
-
-li{
     list-style-type: none;
-    padding: 0 50px 0 50px;
-    font-size: 2rem;
-    font-weight: bolder;
 }
 
-a{
+.link{
     text-decoration: none;
     color: black;
+    padding: 0 25px 0 25px; 
+    font-size: 2rem;
+    font-weight: bolder;
 }
 
 

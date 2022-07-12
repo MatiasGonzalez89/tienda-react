@@ -1,16 +1,30 @@
 import './App.css';
 import NavBar from './components/Navbar/NavBar';
 import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer' 
+import Cart from './components/Cart';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 
 function App() {
   return (
-    <div style={styles.body}>
+    <BrowserRouter style={styles.body}>
       <NavBar />
-      <ItemListContainer 
+      <Routes>
+        <Route path="/" element={<ItemListContainer 
         greeting='Bienvenido a mi tienda online.'
-      />
-    </div>
+      />} />
+      <Route path="/category/:categoryName" element={<ItemListContainer 
+        greeting='Bienvenido a mi tienda online.'
+      />} />
+      <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+      <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
