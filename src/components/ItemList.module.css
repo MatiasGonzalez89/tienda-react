@@ -2,7 +2,7 @@
     display: flex;
     width: 90%;
     height: fit-content;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin:auto;    
     flex-wrap: wrap;
     border-bottom: 1px solid rgb(239, 174, 9);

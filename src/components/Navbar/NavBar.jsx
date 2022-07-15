@@ -8,12 +8,12 @@ import { Link, NavLink} from 'react-router-dom';
 const NavBar = () => {
 	
 	const categories = [
-		{ name: "inicio", id: 0, route: "/" },
-		{ name: "shirts", id: 1, route: "/category/shirts" },
-		{ name: "pants", id: 2, route: "/category/pants" },
-		{ name: "shoes", id: 3, route: "/category/shoes" },
-		{ name: "accessories", id: 4, route: "/category/accessories" },
-		{ name: "underwear", id: 5, route: "/category/underwear" },
+		{ name: "Inicio", id: 0, route: "/" },
+		{ name: "Remeras", id: 1, route: "/category/remeras" },
+		{ name: "Jeans", id: 2, route: "/category/jeans" },
+		{ name: "Zapatillas", id: 3, route: "/category/zapatillas" },
+		{ name: "Abrigos", id: 4, route: "/category/abrigos" },
+		{ name: "Chaquetas", id: 5, route: "/category/chaquetas" },
 	];
 	
 	return (

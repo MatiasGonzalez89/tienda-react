@@ -14,6 +14,8 @@ export default CartWidget
 
 const styles = {
     cart: {
-        fontSize: "60px"
+        fontSize: "60px",
+        textDecoration: "none",
+        listStyleType: "none"
     }
 }

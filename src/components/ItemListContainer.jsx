@@ -13,23 +13,20 @@ const promesa =new Promise ((res, rej) => {
 
 const ItemListContainer = ({greeting}) => {
 
-    const {categoryName} = useParams()
+    
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(false)
-    
+    const {categoryName} = useParams()
+
+    const url = categoryName ? productos.filter(producto => producto.category === categoryName): productos
 
     useEffect(() => {
-        
-        const Url = categoryName
-        ? productos.filter(producto => producto.category === {categoryName})
-        : productos
-
 
         setLoading(true)
-        promesa.then((Url) => {
+        promesa.then((data) => {
             setLoading(false)
-            setProductos(Url)
-        }) .catch ((reject) => {
+            setProductos(data)
+        }).catch ((reject) => {
             setProductos(reject)
         })
     },[categoryName])
@@ -37,7 +34,7 @@ const ItemListContainer = ({greeting}) => {
     return (
             <main className={styles.itemListContainer}>
                 <h1 className={styles.greeting}>{greeting}</h1>
-                {loading ? <h1>Cargando...</h1> : <ItemList productos={productos} />}
+                {loading ? <h1>Cargando...</h1> : <ItemList productos={url} />}
             </main>
         )
     }

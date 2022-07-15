@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     padding: 100px 100px 50px 100px;
+    background: black;
 }
 
 .itemDetailImg{
