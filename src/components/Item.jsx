@@ -10,7 +10,7 @@ export const Item = ({producto}) => {
                 <h1>{producto.title}</h1>
                 <img className={styles.cardImg} src={producto.imgUrl} alt={producto.title} />
                 <p>{producto.smDescription}</p>
-                <Link key={producto.id} to={`/ItemDetailContainer/ItemDetail/${producto.id}`}><button>Ver detalle</button></Link>
+                <Link key={producto.id} to={`/ItemDetailContainer/ItemDetail/${producto.id}`}><button className={styles.cardShopBtn}>Ver detalle</button></Link>
                 <h2>${producto.price}</h2>
                 
         </div>
