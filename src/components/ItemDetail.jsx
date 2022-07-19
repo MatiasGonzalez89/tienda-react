@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import styles from './ItemDetail.module.css'
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom'
+import { cartContext } from './CartContext/CartContext'
 
 
 export const ItemDetail = ({ producto }) => {
@@ -10,9 +11,12 @@ export const ItemDetail = ({ producto }) => {
 
     const [agregoItem, setAgregoItem] = useState(false)
 
+    const {addItem, isInCart} = useContext(cartContext) 
+
     const onAdd = (contador) => {
         setCantidad(contador)
         setAgregoItem(true)
+        addItem({...producto, cantidad: contador})
     }
 
     return (
@@ -24,7 +28,7 @@ export const ItemDetail = ({ producto }) => {
                 <h1>{producto.title}</h1>
                 <p>{producto.lgDescription}</p>
                 <h2>${producto.price}</h2>
-                {agregoItem ? <Link to='/Cart'><button>Finalizar compra</button></Link> : <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} />}
+                {agregoItem ? <Link to='/Cart'><button>Finalizar compra</button></Link> : <ItemCount stock={producto.stock} initial={1} onAdd={onAdd}  />}
             </div>
         </div>
     )
