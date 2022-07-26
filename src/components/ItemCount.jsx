@@ -17,6 +17,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         onAdd(contador)
     }
     
+    
 
     return (
         <>

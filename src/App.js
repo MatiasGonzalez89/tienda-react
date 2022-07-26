@@ -13,7 +13,7 @@ import CustomProvider from './components/CartContext/CartContext';
 
 function App() {
   return (
-    <BrowserRouter style={styles.body}>
+    <BrowserRouter>
       <CustomProvider>
         <NavBar />
         <Routes>
@@ -32,9 +32,3 @@ function App() {
 }
 
 export default App;
-
-const styles = {
-  body: {
-    backgroundColor: "black"
-  }
-}

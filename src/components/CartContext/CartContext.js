@@ -1,29 +1,53 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 export const cartContext  = createContext()
 const {Provider} = cartContext
 const CustomProvider = ({children}) => {
 
-    const [productos, setProductos] = useState([])
+    const [productsInCart, setProductsInCart] = useState([])
+    let [qty, setQty] = useState (0)
 
-    const addItem = (item) => {
-        setProductos(item)  
+    useEffect(() => {
+        getQuantity()
+
+    }, [productsInCart])
+
+    const getQuantity = () => {
+        return(qty)
+    }
+    
+    const addItem = (product) => {
+        if (isInCart(product.id)) {
+            const index = productsInCart.findIndex(elem => elem.id === product.id)
+            const copia = [...productsInCart]
+            copia[index].qty += product.qty
+            setProductsInCart(copia)
+            setQty(qty += product.qty)
+        }else{
+            setProductsInCart([...productsInCart, product])
+            setQty(qty += product.qty)
+        }
     } 
 
-    const removeItem = (item) => {
-        productos.splice(item.id, 1)
+    const removeItem = (id) => {
+        setProductsInCart(productsInCart.filter(elem => elem.id === !id))
+        let count = 0
+        productsInCart.forEach(elem => {
+            count += elem.quantity
+        })
+        setQty(count)
     }
 
     const clear = () => {
-        setProductos([])
+        setProductsInCart([])
     }
 
-    const isInCart = (itemId) => {
-        productos.find = (elem => elem.id === itemId)
+    const isInCart = (id) => {
+        return productsInCart.some(elem => elem.id === id)
     }
 
     return (
-        <Provider value={{productos, addItem, removeItem, clear}}>
+        <Provider value={{productsInCart, addItem, removeItem, clear, qty}}>
             {children}
         </Provider>
     )

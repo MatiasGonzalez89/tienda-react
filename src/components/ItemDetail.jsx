@@ -7,18 +7,18 @@ import { cartContext } from './CartContext/CartContext'
 
 export const ItemDetail = ({ producto }) => {
 
-    const [cantidad, setCantidad] = useState(0)
+    // const [cantidad, setCantidad] = useState(0)
 
     const [agregoItem, setAgregoItem] = useState(false)
 
-    const {addItem, isInCart} = useContext(cartContext) 
+    const {addItem} = useContext(cartContext) 
 
     const onAdd = (contador) => {
-        setCantidad(contador)
         setAgregoItem(true)
-        addItem({...producto, cantidad: contador})
+        addItem({...producto, qty: contador})
     }
 
+    
     return (
         <div className={styles.itemDetailContainer} key={producto.id} >
             <div>

@@ -1,15 +1,8 @@
 import React, { useState, useEffect} from 'react'
-import productos from '../data/index';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
-
-
-const getItem =new Promise ((res, rej) => {
-    setTimeout(() => {
-        res(productos)
-    }, 2000)
-}) 
-
+import { db } from '../Firebase/firebase'
+import { getDoc, collection, doc} from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
     
@@ -18,12 +11,18 @@ const ItemDetailContainer = () => {
     const {itemId} = useParams();
 
     useEffect(() => {
-
-        setLoading(true)
-        getItem.then((data) => {
+        const productCollection = collection(db, 'productos')
+        const refDoc = doc(productCollection, `${itemId}`)
+        getDoc(refDoc)
+        .then(result => {
+            const producto = {
+                id: result.id,
+                ...result.data(),
+            }
             setLoading(false)
-            setProducto(data[itemId])
-        }).catch ((reject) => {
+            setProducto(producto)
+        })    
+        .catch ((reject) => {
             setProducto(reject)
         })
     },[itemId])

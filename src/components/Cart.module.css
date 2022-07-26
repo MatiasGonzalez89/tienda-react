@@ -1,0 +1,16 @@
+.cart {
+    background-color: black;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartContainer {
+    background-color: rgb(255, 245, 173);
+    width: 90%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    ;
+}
