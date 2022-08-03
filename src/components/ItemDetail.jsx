@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom'
 import { cartContext } from './CartContext/CartContext'
 
 
-export const ItemDetail = ({ producto }) => {
-
-    // const [cantidad, setCantidad] = useState(0)
+const ItemDetail = ({ producto }) => {
 
     const [agregoItem, setAgregoItem] = useState(false)
 
@@ -18,7 +16,7 @@ export const ItemDetail = ({ producto }) => {
         addItem({...producto, qty: contador})
     }
 
-    
+     
     return (
         <div className={styles.itemDetailContainer} key={producto.id} >
             <div>

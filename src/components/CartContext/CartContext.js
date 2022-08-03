@@ -13,7 +13,11 @@ const CustomProvider = ({children}) => {
     }, [productsInCart])
 
     const getQuantity = () => {
-        return(qty)
+        let count = 0
+        productsInCart.forEach(elem => {
+            count += elem.qty
+        })
+        setQty(count)
     }
     
     const addItem = (product) => {
@@ -22,20 +26,15 @@ const CustomProvider = ({children}) => {
             const copia = [...productsInCart]
             copia[index].qty += product.qty
             setProductsInCart(copia)
-            setQty(qty += product.qty)
+           
         }else{
             setProductsInCart([...productsInCart, product])
-            setQty(qty += product.qty)
+            
         }
     } 
 
-    const removeItem = (id) => {
-        setProductsInCart(productsInCart.filter(elem => elem.id === !id))
-        let count = 0
-        productsInCart.forEach(elem => {
-            count += elem.quantity
-        })
-        setQty(count)
+    const removeItem = (id) => {  
+        setProductsInCart(productsInCart.filter(elem => elem.id !== id)) 
     }
 
     const clear = () => {

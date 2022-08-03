@@ -4,13 +4,7 @@ import styles from './ItemListContainer.module.css'
 import { useParams } from 'react-router-dom'
 import { db } from '../Firebase/firebase'
 import { getDocs, collection, query, where } from 'firebase/firestore'
-
-/*const promesa =new Promise ((res, rej) => {
-    setTimeout(() => {
-        res(productos)
-    }, 2000)
-
-}) */
+import ClockLoader from "react-spinners/ClipLoader" 
 
 const ItemListContainer = ({ greeting }) => {
 
@@ -39,18 +33,11 @@ const ItemListContainer = ({ greeting }) => {
 
     }, [categoryName])
 
-    // setLoading(true) 
-    // promesa.then((data) => {
-    //     setLoading(false)
-    //     setProductos(data)
-    // })
-    // })
-
 
     return (
         <main className={styles.itemListContainer}>
             <h1 className={styles.greeting}>{greeting}</h1>
-            {loading ? <h1>Cargando...</h1> : <ItemList productos={productos} />}
+            {loading ? <ClockLoader color="#fbe725" /> : <ItemList productos={productos} />}
         </main>
     )
 }

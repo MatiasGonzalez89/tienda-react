@@ -13,7 +13,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         if(contador > initial) {setContador(contador -= 1)}
     }
 
-    const agregarAlCarrito = (e) =>{
+    const agregarAlCarrito = () =>{
         onAdd(contador)
     }
     

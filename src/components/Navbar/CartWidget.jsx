@@ -8,9 +8,9 @@ const CartWidget = () => {
     const {qty} = useContext(cartContext)
     
     return (
-    <div>
+    <div style={styles.cartWidget}>
         <HiShoppingCart style={styles.cart} />
-        {qty!==0 ? <p>{qty}</p> : ""}
+        {qty!==0 ? <p style={styles.num}>{qty}</p> : ""}
     </div>
     )
 };
@@ -18,9 +18,21 @@ const CartWidget = () => {
 export default CartWidget
 
 const styles = {
+    cartWidget: {
+        display: "flex"
+    },
+
     cart: {
         fontSize: "60px",
         textDecoration: "none",
-        listStyleType: "none"
+        listStyleType: "none",
+        color:"black"
+    },
+
+    num: {
+        fontSize: "30px",
+        textDecoration: "none",
+        listStyleType: "none",
+        color:"black"
     }
 }
