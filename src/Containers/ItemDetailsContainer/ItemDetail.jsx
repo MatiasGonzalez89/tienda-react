@@ -15,13 +15,13 @@ const ItemDetail = ({ producto }) => {
         setAgregoItem(true)
         addItem({...producto, qty: contador})
     }
-
      
     return (
         <div className={styles.itemDetailContainer} key={producto.id} >
             <div>
                 <img className={styles.itemDetailImg} src={producto.imgUrl} alt={producto.title} />
             </div>
+            
             <div className={styles.detailContainer}>
                 <h1>{producto.title}</h1>
                 <p>{producto.description}</p>

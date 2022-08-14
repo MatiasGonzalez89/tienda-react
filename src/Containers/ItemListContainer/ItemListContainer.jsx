@@ -8,9 +8,9 @@ import ClockLoader from "react-spinners/ClipLoader"
 
 const ItemListContainer = ({ greeting }) => {
 
-
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
+
     const { categoryName } = useParams()
 
     useEffect(() => {
@@ -30,21 +30,18 @@ const ItemListContainer = ({ greeting }) => {
             .catch((reject) => {
                 setProductos(reject)
             })
-
     }, [categoryName])
 
 
     return (
         <div className={styles.itemListContainer}>
             <h1 className={styles.greeting}>{greeting}</h1>
-
-            {loading
+            {loading  
                 ? <div className={styles.spinner}>
                     <ClockLoader color="#fbe725" size="150px" />
                 </div>
 
                 : <div className={styles.container}>
-
                     <ItemList productos={productos} />
                 </div>}
         </div>

@@ -15,9 +15,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     const agregarAlCarrito = () =>{
         onAdd(contador)
-    }
-    
-    
+    } 
 
     return (
         <>

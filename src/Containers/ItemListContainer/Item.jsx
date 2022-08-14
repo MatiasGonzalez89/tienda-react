@@ -13,7 +13,6 @@ export const Item = ({ producto }) => {
                     <button className={styles.cardShopBtn}>Ver detalle</button>
                 </Link>
                 <h2>${producto.price}</h2>
-                
         </div>
     )
 }

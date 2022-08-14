@@ -18,7 +18,9 @@ const NavBar = () => {
 	
 	return (
 		<header>
-			<Link to="/"><img className={styles.logo} src="https://www.zarla.com/images/zarla-caballeros-1x1-2400x2400-20220322-bh6yhpdpxr898d7qx8my.png?crop=1:1,smart&width=250&dpr=2" alt="logo" /></Link>
+			<Link to="/">
+				<img className={styles.logo} src="https://www.zarla.com/images/zarla-caballeros-1x1-2400x2400-20220322-bh6yhpdpxr898d7qx8my.png?crop=1:1,smart&width=250&dpr=2" alt="logo" />
+			</Link>
 			
 			<nav className={styles.menu}>
 				{categories.map((category) => 

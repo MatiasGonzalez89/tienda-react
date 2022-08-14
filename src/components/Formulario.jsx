@@ -4,10 +4,8 @@ import styles from '../Styles/Formulario.module.css'
 
 
 const Formulario = ({ obtenerDatos, finalizarCompra }) => {
-
     const { register, formState: { errors }, handleSubmit } = useForm()
     const [envioDatos, setEnvioDatos] = useState(false)
-
 
     const onSubmit = (data, e) => {
         obtenerDatos(data)
@@ -31,6 +29,7 @@ const Formulario = ({ obtenerDatos, finalizarCompra }) => {
                             })} />
                             {errors.nombre?.type === 'required' && <p className={styles.error}>Campo requerido</p>}
                         </div>
+
                         <div className={styles.formBox}>
                             <label className={styles.campo}>Apellido</label>
                             <input className={styles.inputForm} type="text" {...register('apellido', {
@@ -39,6 +38,7 @@ const Formulario = ({ obtenerDatos, finalizarCompra }) => {
                             })} />
                             {errors.apellido?.type === 'required' && <p className={styles.error}>Campo requerido</p>}
                         </div>
+
                         <div className={styles.formBox}>
                             <label className={styles.campo}>Calle y n°</label>
                             <input className={styles.inputForm} type="text" {...register('calle', {
@@ -47,6 +47,7 @@ const Formulario = ({ obtenerDatos, finalizarCompra }) => {
                             })} />
                             {errors.calle?.type === 'required' && <p className={styles.error}>Campo requerido</p>}
                         </div>
+
                         <div className={styles.formBox}>
                             <label className={styles.campo}>Email</label>
                             <input className={styles.inputForm} type="text" {...register('email', {
@@ -56,6 +57,7 @@ const Formulario = ({ obtenerDatos, finalizarCompra }) => {
                             {errors.email?.type === 'required' && <p className={styles.error}>Campo requerido</p>}
                             {errors.email?.type === 'pattern' && <p className={styles.error}>El formato de email es incorrecto</p>}
                         </div>
+
                         <h1>Datos de tarjeta</h1>
                         <div className={styles.formBox}>
                             <label className={styles.campo}>Tarjeta</label>
@@ -65,6 +67,7 @@ const Formulario = ({ obtenerDatos, finalizarCompra }) => {
                                 <option className={styles.option} value="american">American Express</option>
                             </select>
                         </div>
+
                         <div className={styles.formBox}>
                             <label className={styles.campo}>Nombre y apellido del titular de tarjeta</label>
                             <input className={styles.inputForm} type="text" {...register("titular", {
@@ -73,6 +76,7 @@ const Formulario = ({ obtenerDatos, finalizarCompra }) => {
                             })} />
                             {errors.titular?.type === 'required' && <p className={styles.error}>Campo requerido</p>}
                         </div>
+
                         <div className={styles.formBox}>
                             <label className={styles.campo}>N° de tarjeta</label>
                             <input className={styles.inputForm} type="number"  {...register("numero", {
@@ -85,6 +89,7 @@ const Formulario = ({ obtenerDatos, finalizarCompra }) => {
                             {errors.numero?.type === 'maxLength' && <p className={styles.error}>Debe contener 16 digitos</p>}
                             {errors.numero?.type === 'minLength' && <p className={styles.error}>Debe contener 16 digitos</p>}
                         </div>
+
                         <div className={styles.formBox}>
                             <label className={styles.campo}>Expiración</label>
                             <input type="number" {...register("expiracion", {
@@ -97,6 +102,7 @@ const Formulario = ({ obtenerDatos, finalizarCompra }) => {
                             {errors.expiracion?.type === 'maxLength' && <p className={styles.error}>Debe contener 4 digitos</p>}
                             {errors.expiracion?.type === 'minLength' && <p className={styles.error}>Debe contener 4 digitos</p>}
                         </div>
+
                         <div className={styles.formBox}>
                             <label className={styles.campo}>Código de seguridad</label>
                             <input type="number" {...register("codigo", {
@@ -109,8 +115,9 @@ const Formulario = ({ obtenerDatos, finalizarCompra }) => {
                             {errors.codigo?.type === 'maxLength' && <p className={styles.error}>Debe contener 3 0 4 digitos</p>}
                             {errors.codigo?.type === 'minLength' && <p className={styles.error}>Debe contener 3 o 4 digitos</p>}
                         </div>
+
                         <div className={styles.btnContainer}>
-                        <button className={styles.btnContinuar} type="submit" value="Continuar">Continuar</button>
+                            <button className={styles.btnContinuar} type="submit" value="Continuar">Continuar</button>
                         </div>
                     </form>
                 </div>

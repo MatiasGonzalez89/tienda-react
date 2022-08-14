@@ -24,7 +24,6 @@ const Cart = () => {
   }
 
   const finalizarCompra = () => {
-
     const ventasCollection = collection(db, 'ventas')
     addDoc(ventasCollection, {
       comprador: form,
@@ -35,27 +34,21 @@ const Cart = () => {
       .then((result) => {
         setIdVenta(result.id)
       })
-
     productsInCart.forEach(product => {
       const updateCollection = doc(db, "productos", product.id)
       updateDoc(updateCollection, { stock: product.stock - product.qty })
     });
-
     setFinalizar(true)
-
   }
 
   const handleClick = () => {
     setRealizaCompra(true)
   }
 
-
-
   return (
     <div className={styles.container}>
-
       {productsInCart.length === 0
-
+        
         ? <div className={styles.cartMessage}>
           <p>No existen productos en el carrito</p>
           <div><Link to='/'><button className={styles.btnMessage}>Volver a Inicio</button></Link></div>
@@ -76,7 +69,6 @@ const Cart = () => {
                   <div className={styles.tableHeader}>Total</div>
                   <div className={styles.tableHeader}></div>
               </div>
-
               {productsInCart.map((product, i) =>
                 <div className={styles.tableContainer} key={product.id}>
                   <div className={styles.tableItem}>{i + 1}</div>
@@ -88,17 +80,14 @@ const Cart = () => {
                   <button className={styles.tableButton} value={product.id} onClick={remove}>X</button>
                 </div>
               )}
-
               <div>
                 <p className={styles.tableTotal}>Precio Final: ${total}</p>
               </div>
-
             </div>
 
             <div>
               <button className={styles.btnComprar} onClick={handleClick}>Comprar</button>
             </div>
-
           </div>
 
           : !finalizar //Segundo estado para, a traves del ternario, mostrar el mensaje final de la compra con el idVenta
@@ -111,10 +100,6 @@ const Cart = () => {
               <h1 className={styles.mensajeFinal}>Su compra se realizo con exito!</h1>
               <h1 className={styles.mensajeFinal}>El codigo de su compra es {idVenta}</h1>
             </div>
-
-
-
-
       }
     </div>
   )
