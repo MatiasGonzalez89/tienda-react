@@ -1,8 +1,8 @@
 import React, {useState, useContext} from 'react'
-import styles from './ItemDetail.module.css'
-import ItemCount from './ItemCount'
+import styles from '../../Styles/ItemDetail.module.css'
+import ItemCount from '../../components/ItemCount'
 import { Link } from 'react-router-dom'
-import { cartContext } from './CartContext/CartContext'
+import { cartContext } from '../../CartContext/CartContext'
 
 
 const ItemDetail = ({ producto }) => {
@@ -24,7 +24,7 @@ const ItemDetail = ({ producto }) => {
             </div>
             <div className={styles.detailContainer}>
                 <h1>{producto.title}</h1>
-                <p>{producto.lgDescription}</p>
+                <p>{producto.description}</p>
                 <h2>${producto.price}</h2>
                 {agregoItem ? <Link to='/Cart'><button>Finalizar compra</button></Link> : <ItemCount stock={producto.stock} initial={1} onAdd={onAdd}  />}
             </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import CartWidget from './CartWidget'
-import styles from './Navbar.module.css'
+import styles from '../../Styles/Navbar.module.css'
 import { Link, NavLink} from 'react-router-dom';
 
 //camisetas, pantalones, calzado, accesorios, ropa interior

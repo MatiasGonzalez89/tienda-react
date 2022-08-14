@@ -6,19 +6,30 @@ const CustomProvider = ({children}) => {
 
     const [productsInCart, setProductsInCart] = useState([])
     let [qty, setQty] = useState (0)
+    let [total, setTotal] = useState (0)
 
     useEffect(() => {
+        const getQuantity = () => {
+            let count = 0
+            productsInCart.forEach(elem => {
+                count += elem.qty
+            })
+            setQty(count)
+        }
         getQuantity()
 
-    }, [productsInCart])
+        const calcularTotal = () => {
+            let suma = 0
+            productsInCart.forEach(elem => {
+                suma += elem.price * elem.qty
+            })
+            setTotal(suma)
+          }
+        calcularTotal()
 
-    const getQuantity = () => {
-        let count = 0
-        productsInCart.forEach(elem => {
-            count += elem.qty
-        })
-        setQty(count)
-    }
+    }, [productsInCart, total])
+
+    
     
     const addItem = (product) => {
         if (isInCart(product.id)) {
@@ -26,7 +37,6 @@ const CustomProvider = ({children}) => {
             const copia = [...productsInCart]
             copia[index].qty += product.qty
             setProductsInCart(copia)
-           
         }else{
             setProductsInCart([...productsInCart, product])
             
@@ -46,7 +56,7 @@ const CustomProvider = ({children}) => {
     }
 
     return (
-        <Provider value={{productsInCart, addItem, removeItem, clear, qty}}>
+        <Provider value={{productsInCart, addItem, removeItem, clear, qty, total }}>
             {children}
         </Provider>
     )

@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import ItemList from './ItemList'
-import styles from './ItemListContainer.module.css'
+import ItemList from '../ItemListContainer/ItemList'
+import styles from '../../Styles/ItemListContainer.module.css'
 import { useParams } from 'react-router-dom'
-import { db } from '../Firebase/firebase'
+import { db } from '../../Firebase/firebase'
 import { getDocs, collection, query, where } from 'firebase/firestore'
-import ClockLoader from "react-spinners/ClipLoader" 
+import ClockLoader from "react-spinners/ClipLoader"
 
 const ItemListContainer = ({ greeting }) => {
 
 
     const [productos, setProductos] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const { categoryName } = useParams()
 
     useEffect(() => {
@@ -35,10 +35,19 @@ const ItemListContainer = ({ greeting }) => {
 
 
     return (
-        <main className={styles.itemListContainer}>
+        <div className={styles.itemListContainer}>
             <h1 className={styles.greeting}>{greeting}</h1>
-            {loading ? <ClockLoader color="#fbe725" /> : <ItemList productos={productos} />}
-        </main>
+
+            {loading
+                ? <div className={styles.spinner}>
+                    <ClockLoader color="#fbe725" size="150px" />
+                </div>
+
+                : <div className={styles.container}>
+
+                    <ItemList productos={productos} />
+                </div>}
+        </div>
     )
 }
 

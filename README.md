@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# Mi primer proyecto en React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Es un ecommerce de ropa masculina, creado con React, donde solo utilice css para dar los estilos. 
 
-## Available Scripts
+## Configurar el entorno
 
-In the project directory, you can run:
+1. Clonar el repositorio en github
+>https://github.com/MatiasGonzalez89/tienda-react.git
 
-### `npm start`
+2. Correr en la consola el comando ```npm install```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Crear archivo .env. en la carpeta ```src``` del proyecto y cargar las siguientes propiedades de Firebase
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+REACT_APP_apiKey=
+REACT_APP_authDomain=
+REACT_APP_projectId=
+REACT_APP_storageBucket=
+REACT_APP_messagingSenderId=
+REACT_APP_appId=
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Ejecutar la aplicación
 
-### `npm run build`
+Para levantar la aplicación, ejecutar el comando ```npm run start```.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+>>>>>>>>>>>>>>>>>>>>__________
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Librerías utilizadas
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### React-icons
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> [https://react-icons.github.io/react-icons]
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+De esta libreria solo utilice el icono para el CartWidget.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![carrito](./public/carrito.png)
 
-## Learn More
+______
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### React-router-dom
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+>[https://github.com/remix-run/react-router]
 
-### Code Splitting
+Con React-router-dom pude hacer navegabilidad dentro del proyecto.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+_____
 
-### Analyzing the Bundle Size
+### React-hook-form
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+>[https://react-hook-form.com/]
 
-### Making a Progressive Web App
+Esta librería la utilice para crear el formulario.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+____
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Firebase
 
-### Deployment
+> [https://firebase.google.com/?hl=es]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Si bien es una plataforma digital y no una librería, la utilice como base de datos.
 
-### `npm run build` fails to minify
+>>>>>>>>>>>>>>>>>>>>______
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Funcionamiento de la app
+
+Al iniciar la aplicación se verá la vista principal con todos los productos.
+
+
+![Vista principal de la app](./public/home.png)
+
+En esa vista se encuentra el Navbar, desde el cual se puede filtrar los productos según su categoria. Tambien se encuentra el logo de la tienda, el cual tiene un link a la vista principal.
+
+![Navbar](./public/Navbar.png)
+
+ El ultimo elemento del Navbar, es el icono del carrito que conduce a la vista del Cart.
+
+![Vista del Cart](./public/cart.png)
+
+Una vez que le damos click a "comprar" nos lleva a la vista del Formulario y que finalicemos la compra.
+
+![Vista del Formulario](./public/formulario.png)
+
+
+>>>>>>>>>>>>>>>>_______
+
+##Fuente
+
+Las imagenes de los productos las tome de un ecommerce italiano.
+
+>[https://www.replayjeans.co.il/]
+
+>>>>>______
+
+Proyecto creado por Matias González para el curso de React JS de **CODER HOUSE**

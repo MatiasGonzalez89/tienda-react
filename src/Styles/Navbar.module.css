@@ -1,9 +1,12 @@
 header{
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(rgba(238, 181, 37, 0.922), rgba(190, 146, 34, 0.922), rgba(124, 94, 20, 0.922))
+    background: linear-gradient(rgba(238, 181, 37, 0.922), rgba(190, 146, 34, 0.922), rgba(124, 94, 20, 0.922));
+    position: sticky;
+    top: 0;
 }
 
 .logo{
